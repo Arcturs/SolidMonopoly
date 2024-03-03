@@ -1,11 +1,11 @@
 package ru.tinkoff.asashina.client.after;
 
 import ru.tinkoff.asashina.enumeration.ActionType;
-import ru.tinkoff.asashina.game.after.SendMessageInterface;
+import ru.tinkoff.asashina.game.after.MessageSender;
 
 import java.util.logging.Logger;
 
-public class ConsoleClient implements ActionTypeProcessingInterface, SendMessageInterface {
+public class ConsoleClient implements ActionTypeProcessor, MessageSender {
 
     private final Logger log = Logger.getLogger("MonopolyLogger");
 

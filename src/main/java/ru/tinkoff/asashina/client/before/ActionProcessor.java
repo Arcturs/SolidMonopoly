@@ -4,7 +4,7 @@ import ru.tinkoff.asashina.enumeration.ActionType;
 
 import java.net.http.HttpRequest;
 
-public interface ActionProcessingInterface {
+public interface ActionProcessor {
 
     void processAction(ActionType action);
 

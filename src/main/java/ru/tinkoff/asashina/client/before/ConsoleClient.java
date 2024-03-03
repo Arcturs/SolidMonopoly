@@ -5,7 +5,7 @@ import ru.tinkoff.asashina.enumeration.ActionType;
 import java.net.http.HttpRequest;
 import java.util.logging.Logger;
 
-public class ConsoleClient implements ActionProcessingInterface {
+public class ConsoleClient implements ActionProcessor {
 
     private final Logger log = Logger.getLogger("MonopolyLogger");
 

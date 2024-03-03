@@ -11,13 +11,13 @@ import ru.tinkoff.asashina.street.before.Street;
 @Getter
 public class Game {
 
-    private final Cell[] gameBoard = CellInitializer();
+    private final Cell[] gameBoard = initCells();
 
     private ConsoleClient consoleClient;
     private UiClient uiClient;
     private HttpClient httpClient;
 
-    private static Cell[] CellInitializer () {
+    private static Cell[] initCells() {
         // init cells
         return new Cell[40];
     }
@@ -26,7 +26,7 @@ public class Game {
         return gameBoard[position];
     }
 
-    public void setCell (Cell cell) {
+    public void setCell(Cell cell) {
         gameBoard[cell.getPosition()] = cell;
     }
 
@@ -44,7 +44,7 @@ public class Game {
         }
     }
 
-    public void checkCash (Player player, int price) {
+    public void checkCash(Player player, int price) {
         while (player.getCash() < price && !player.getAllStreets().isEmpty()) {
             // bail or sell
         }

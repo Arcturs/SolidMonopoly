@@ -4,7 +4,7 @@ import ru.tinkoff.asashina.enumeration.ActionType;
 
 import java.net.http.HttpRequest;
 
-public class UiClient implements ActionProcessingInterface {
+public class UiClient implements ActionProcessor {
 
     @Override
     public void processAction(ActionType action) {

@@ -1,6 +1,6 @@
 package ru.tinkoff.asashina.game.after;
 
-public interface SendMessageInterface {
+public interface MessageSender {
 
     void sendMessage(String message);
 

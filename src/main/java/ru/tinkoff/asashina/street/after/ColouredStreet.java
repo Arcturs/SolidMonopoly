@@ -4,7 +4,11 @@ import lombok.Getter;
 import ru.tinkoff.asashina.enumeration.Colour;
 
 @Getter
-public abstract class ColouredStreet extends Street {
+public class ColouredStreet extends Street {
+
+    private final Colour colour;
+    private final int housePrice;
+    private final int hotelPrice;
 
     private int houses = 0;
     private boolean isHotelBuilt = false;
@@ -14,19 +18,16 @@ public abstract class ColouredStreet extends Street {
             int price,
             int collateralPrice,
             int maxMonopolyLevel,
+            int[] possibleMonopolyPrices,
             Colour colour,
-            int[] possibleMonopolyPrices) {
+            int housePrice,
+            int hotelPrice) {
 
-        super(name, price, collateralPrice, maxMonopolyLevel, colour, possibleMonopolyPrices);
+        super(name, price, collateralPrice, maxMonopolyLevel, possibleMonopolyPrices);
+        this.colour = colour;
+        this.housePrice = housePrice;
+        this.hotelPrice = hotelPrice;
     }
-
-    /**
-     * Методы для покупки домов/отеля
-     */
-
-    public abstract int getHousePrice();
-
-    public abstract int getHotelPrice();
 
     public void buildHouse() {
         currentMonopolyLevel++;

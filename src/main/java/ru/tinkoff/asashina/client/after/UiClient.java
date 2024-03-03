@@ -1,9 +1,9 @@
 package ru.tinkoff.asashina.client.after;
 
 import ru.tinkoff.asashina.enumeration.ActionType;
-import ru.tinkoff.asashina.game.after.SendMessageInterface;
+import ru.tinkoff.asashina.game.after.MessageSender;
 
-public class UiClient implements ActionTypeProcessingInterface, SendMessageInterface {
+public class UiClient implements ActionTypeProcessor, MessageSender {
 
     @Override
     public void processAction(ActionType action) {

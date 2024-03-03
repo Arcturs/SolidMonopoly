@@ -3,19 +3,17 @@ package ru.tinkoff.asashina.street.after;
 import lombok.Getter;
 import lombok.Setter;
 import ru.tinkoff.asashina.player.Player;
-import ru.tinkoff.asashina.enumeration.Colour;
 import ru.tinkoff.asashina.enumeration.StreetStatus;
 
 @Getter
 @Setter
-public class Street {
+public abstract class Street {
 
     private final String name;
     private final int price;
     private final int collateralPrice;
     private final int basicRent;
     private final int maxMonopolyLevel;
-    private final Colour colour;
     private final int[] possibleMonopolyPrices;
 
     protected int currentMonopolyLevel = 0;
@@ -27,7 +25,6 @@ public class Street {
             int price,
             int collateralPrice,
             int maxMonopolyLevel,
-            Colour colour,
             int[] possibleMonopolyPrices) {
 
         this.name = name;
@@ -35,7 +32,6 @@ public class Street {
         this.collateralPrice = collateralPrice;
         this.possibleMonopolyPrices = possibleMonopolyPrices;
         this.basicRent = possibleMonopolyPrices[0];
-        this.colour = colour;
         this.maxMonopolyLevel = maxMonopolyLevel;
     }
 

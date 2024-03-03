@@ -6,14 +6,14 @@ import ru.tinkoff.asashina.player.Player;
 @AllArgsConstructor
 public class PayService {
 
-    private final SendMessageInterface sendMessageInterface;
+    private final MessageSender messageSender;
 
-    public void checkCash (Player player, int price) {
+    public void checkCash(Player player, int price) {
         while (player.getCash() < price && !player.getAllStreets().isEmpty()) {
             // bail or sell
         }
         if (player.getCash() < price && player.getAllStreets().isEmpty()) {
-            sendMessageInterface.sendMessage("Player is bankrupt");
+            messageSender.sendMessage("Player %s is bankrupt".formatted(player));
         }
     }
 

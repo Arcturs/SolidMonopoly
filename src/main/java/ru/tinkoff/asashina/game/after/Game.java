@@ -2,25 +2,18 @@ package ru.tinkoff.asashina.game.after;
 
 import lombok.Getter;
 import ru.tinkoff.asashina.cell.Cell;
-import ru.tinkoff.asashina.client.before.ConsoleClient;
-import ru.tinkoff.asashina.client.before.HttpClient;
-import ru.tinkoff.asashina.client.before.UiClient;
-import ru.tinkoff.asashina.player.Player;
-import ru.tinkoff.asashina.street.before.Street;
-
-import java.util.List;
 
 @Getter
 public class Game {
 
-    private final Cell[] gameBoard = CellInitializer();
-    private final SendMessageInterface sendMessageInterface;
+    private final Cell[] gameBoard = initCells();
+    private final MessageSender messageSender;
 
-    public Game(SendMessageInterface sendMessageInterface) {
-        this.sendMessageInterface = sendMessageInterface;
+    public Game(MessageSender messageSender) {
+        this.messageSender = messageSender;
     }
 
-    private static Cell[] CellInitializer () {
+    private static Cell[] initCells() {
         // init cells
         return new Cell[40];
     }
@@ -29,8 +22,12 @@ public class Game {
         return gameBoard[position];
     }
 
-    public void setCell (Cell cell) {
+    public void setCell(Cell cell) {
         gameBoard[cell.getPosition()] = cell;
+    }
+
+    public void sendMessage(String message) {
+        messageSender.sendMessage(message);
     }
 
 }

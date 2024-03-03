@@ -1,7 +1,6 @@
 package ru.tinkoff.asashina.street.after;
 
 import lombok.Getter;
-import ru.tinkoff.asashina.enumeration.Colour;
 
 @Getter
 public class RailroadStreet extends Street {
@@ -13,7 +12,7 @@ public class RailroadStreet extends Street {
             int maxMonopolyLevel,
             int[] possibleMonopolyPrices) {
 
-        super(name, price, collateralPrice, maxMonopolyLevel, Colour.RAILROAD, possibleMonopolyPrices);
+        super(name, price, collateralPrice, maxMonopolyLevel, possibleMonopolyPrices);
     }
 
 }
